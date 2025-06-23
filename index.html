@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Predictor</title>
+</head>
+<body>
+    <h2>Enter Study Hours</h2>
+    <form method="POST" action="/predict">
+        <input type="number" name="hours" step="0.1" required>
+        <button type="submit">Predict Marks</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Predicted Marks for {{ hours }} hours: <span style="color: green;">{{ prediction }}</span></h3>
+    {% endif %}
+</body>
+</html>
